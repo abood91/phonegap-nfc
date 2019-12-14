@@ -36,6 +36,16 @@
             <uses-feature android:name="android.hardware.nfc" android:required="false"/>
         </config-file>
 
+        <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+                <action android:name="android.nfc.action.TAG_DISCOVERED" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="application/com.helvar.activeahead.activetune" />
+                <data android:mimeType="text/com.helvar.activeahead.activetune" />
+            </intent-filter>
+        </config-file>
+
     </platform>
 
     <platform name="wp8">
